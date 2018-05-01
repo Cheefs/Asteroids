@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
+
 
 namespace MyGame
 {
@@ -12,6 +14,7 @@ namespace MyGame
 
         static void Main(string[] args)
         {
+            Console.SetWindowSize(60, 20);
             form.Width = 800;
             form.Height = 600;
 

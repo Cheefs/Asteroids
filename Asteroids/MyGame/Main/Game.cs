@@ -238,7 +238,7 @@ namespace MyGame
                 else delLog.Costum("Boost Off");
                }
                 if (e.KeyCode == Keys.N) SaundPlayer();
-            if (e.KeyCode == Keys.M) { _SndPlr.Stop(); delLog.Costum("Music Off"); }
+            if (_SndPlr != null & e.KeyCode == Keys.M) { _SndPlr.Stop(); delLog.Costum("Music Off"); }
 
                 if (e.KeyCode == Keys.Escape) Application.Exit();
         }
