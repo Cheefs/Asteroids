@@ -1,0 +1,7 @@
+C:\Users\User\Desktop\HomeWork3\Homework4Tasks\bin\Debug\Homework4Tasks.exe.config
+C:\Users\User\Desktop\HomeWork3\Homework4Tasks\bin\Debug\Homework4Tasks.exe
+C:\Users\User\Desktop\HomeWork3\Homework4Tasks\bin\Debug\Homework4Tasks.pdb
+C:\Users\User\Desktop\HomeWork3\Homework4Tasks\obj\Debug\Homework4Tasks.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\HomeWork3\Homework4Tasks\obj\Debug\Homework4Tasks.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\HomeWork3\Homework4Tasks\obj\Debug\Homework4Tasks.exe
+C:\Users\User\Desktop\HomeWork3\Homework4Tasks\obj\Debug\Homework4Tasks.pdb

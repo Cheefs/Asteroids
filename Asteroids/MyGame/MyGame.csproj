@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C676359D-27E7-4F41-809F-B605B624CF27}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MyGame</RootNamespace>
+    <AssemblyName>MyGame</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameObjekts\Asteroid.cs" />
+    <Compile Include="GameObjekts\BaseObject.cs" />
+    <Compile Include="GameObjekts\Planets.cs" />
+    <Compile Include="Main\BestScore.cs" />
+    <Compile Include="GameObjekts\Bullet.cs" />
+    <Compile Include="Main\Button.cs" />
+    <Compile Include="Main\Game.cs" />
+    <Compile Include="GameObjekts\HelpElements.cs" />
+    <Compile Include="Addons\ICollision.cs" />
+    <Compile Include="Addons\Log.cs" />
+    <Compile Include="Addons\myExeptions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="GameObjekts\Ship.cs" />
+    <Compile Include="Main\SplashScreen.cs" />
+    <Compile Include="GameObjekts\SplashScreenObj.cs" />
+    <Compile Include="GameObjekts\Star.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
