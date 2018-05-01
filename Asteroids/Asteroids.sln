@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame", "MyGame\MyGame.csproj", "{C676359D-27E7-4F41-809F-B605B624CF27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework4Tasks", "Homework4Tasks\Homework4Tasks.csproj", "{5BEC5D09-1A0C-48F1-B6A6-16E827E78CBE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{C676359D-27E7-4F41-809F-B605B624CF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C676359D-27E7-4F41-809F-B605B624CF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C676359D-27E7-4F41-809F-B605B624CF27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BEC5D09-1A0C-48F1-B6A6-16E827E78CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BEC5D09-1A0C-48F1-B6A6-16E827E78CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BEC5D09-1A0C-48F1-B6A6-16E827E78CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BEC5D09-1A0C-48F1-B6A6-16E827E78CBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
