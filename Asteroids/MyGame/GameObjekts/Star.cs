@@ -17,7 +17,6 @@ namespace MyGame
             //Еще будет либо редактроватся, либо заменено
             Game.Buffer.Graphics.DrawBezier(Pens.White, 0, 450, 404, 380, 450, 400, 800, 450);
         }
-        //Ship _ship = new Ship(Point.Empty, Point.Empty, Size.Empty);
         public override void Update()
         {
             Pos.X = Pos.X - Ship._speed*5 + Dir.X;

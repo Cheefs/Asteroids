@@ -7,12 +7,10 @@ namespace MyGame
 /// с рандомной выборкой планеты по индексатору, как реализовать еще даже не думал, просто планы
 /// </summary>
     class Planets : BaseObject
-    {
-        
+    {     
         public Planets(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
-            img = Image.FromFile("moon.png");
-           
+            img = Image.FromFile("moon.png"); 
         }
         public override void Draw()
         {

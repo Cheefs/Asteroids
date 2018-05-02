@@ -19,12 +19,10 @@ namespace MyGame
       
         public Asteroid(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
-            //Power = 1;
             img = Image.FromFile("meteor.png");
         }
         public object Clone()
         {
- 
             Asteroid asteroid = new Asteroid(new Point(Pos.X, Pos.Y), new Point(Dir.X, Dir.Y),
             new Size(Size.Width, Size.Height)) { Power = Power };
             return asteroid;

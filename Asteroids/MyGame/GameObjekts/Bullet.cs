@@ -14,8 +14,7 @@ namespace MyGame
         }
         public override void Update()
         {
-            Pos.X = Pos.X + 30;
-           
+            Pos.X = Pos.X + 30;    
         }
     }
 }
