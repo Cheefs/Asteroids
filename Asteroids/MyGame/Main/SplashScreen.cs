@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.IO;
 
 namespace MyGame
 {
@@ -11,6 +12,7 @@ namespace MyGame
         public static BufferedGraphics Buffer;
         public static int Width { get; set; }
         public static int Height { get; set; }
+         static string drawString;
         static Image img;
         static SplashScreen()
         {
@@ -27,7 +29,8 @@ namespace MyGame
         public static void Init(Form form)
         {
             Load();
-        
+            Score();
+
             Timer timer = new Timer { Interval = 30 };
             timer.Start();
             timer.Tick += Timer_Tick;
@@ -37,6 +40,12 @@ namespace MyGame
             Width = form.Width;
             Height = form.Height;
             Buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
+         
+            Label lb = new Label();
+            lb.Text= drawString;
+            lb.BackColor = Color.Black;
+            lb.ForeColor = Color.Yellow;
+            form.Controls.Add(lb);
         }
      
         public static void Draw()
@@ -60,6 +69,15 @@ namespace MyGame
         {
           _objs.Update();
         }
+
+        private static void Score()
+        {
+            using (var sr = new StreamReader("score.txt"))
+            {
+              drawString=  sr.ReadLine();
+            }
     }
+}
+
 
 }

@@ -38,18 +38,18 @@ namespace MyGame
             try { Buffer.Render(); }
             catch { Application.Exit();}
 
-            Buffer.Graphics.Clear(Color.Green);
+            //Buffer.Graphics.Clear(Color.Green);
             
-            StreamReader score = new StreamReader("score.txt");
-            SolidBrush drawBrush = new SolidBrush(Color.Black);
-            PointF drawPoint = new PointF(50, 10);
-            Font drawFont = new Font("Segoe Script", 10);
-            string drawString;
-                drawString = score.ReadLine();
+            //StreamReader score = new StreamReader("score.txt");
+            //SolidBrush drawBrush = new SolidBrush(Color.Black);
+            //PointF drawPoint = new PointF(50, 10);
+            //Font drawFont = new Font("Segoe Script", 10);
+            //string drawString;
+            //    drawString = score.ReadLine();
 
 
-                Buffer.Graphics.DrawString(drawString, drawFont, drawBrush, drawPoint);
-            score.Close();
+            //    Buffer.Graphics.DrawString(drawString, drawFont, drawBrush, drawPoint);
+            //score.Close();
         }
     }
 }

@@ -84,6 +84,7 @@ namespace MyGame
             Width = form.Width;
             Height = form.Height;
             Buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
+            form.FormClosing += delegate { BestScore(); };
 
         }
         /// <summary>
@@ -235,7 +236,11 @@ namespace MyGame
                 if (e.KeyCode == Keys.N) SaundPlayer();
             if (_SndPlr != null & e.KeyCode == Keys.M) { _SndPlr.Stop(); delLog.Costum("Music Off"); }
 
-                if (e.KeyCode == Keys.Escape) Application.Exit();
+            if (e.KeyCode == Keys.Escape)
+            {
+                BestScore();
+                Application.Exit();
+            }
         }
         /// <summary>
         /// Завершение иигры (когда энергия корабля == 0)
@@ -267,10 +272,11 @@ namespace MyGame
         /// </summary>
         static void BestScore()
         {
-
-            scoreWriter.AutoFlush = true;
-            scoreWriter.WriteLine("Name: User_1\tscore :{0}", score.ToString());
-
+            using (scoreWriter)
+            {
+                scoreWriter.AutoFlush = true;
+                scoreWriter.WriteLine("Name: User_1\tscore :{0}", score.ToString());
+            }
         }
         /// <summary>
         /// Элемент интерфейса - Отображающий количество астероидов
