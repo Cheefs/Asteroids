@@ -12,8 +12,8 @@ namespace MyGame
         public static BufferedGraphics Buffer;
         public static int Width { get; set; }
         public static int Height { get; set; }
-         static string drawString;
-        static Image img;
+       public static string drawString;
+        static readonly Image img;
         static SplashScreen()
         {
             img = Image.FromFile("space.jpg");
@@ -40,11 +40,15 @@ namespace MyGame
             Width = form.Width;
             Height = form.Height;
             Buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
-         
-            Label lb = new Label();
-            lb.Text= drawString;
-            lb.BackColor = Color.Black;
-            lb.ForeColor = Color.Yellow;
+
+            Label lb = new Label
+            {
+                Text = $"Record:\n Name ???\n Score: {drawString}",
+                Width = 100,
+                Height = 100,
+                BackColor = Color.Black,
+                ForeColor = Color.Yellow
+            };
             form.Controls.Add(lb);
         }
      
@@ -76,8 +80,6 @@ namespace MyGame
             {
               drawString=  sr.ReadLine();
             }
+        }
     }
-}
-
-
 }

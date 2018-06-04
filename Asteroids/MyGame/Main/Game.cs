@@ -24,11 +24,11 @@ namespace MyGame
     static class Game
     {
         private static LogDeligate Del;
-        private static Log log = new Log();
+        private static readonly Log Log = new Log();
         private static DelLog delLog = new DelLog();
         private static HelpElements _heal;
         private static Planets _planets;
-        private static Form form = new Form();
+        private static readonly Form form = new Form();
 
         private static BaseObject[] _objs;
         private static List<Bullet> _bullets = new List<Bullet>();
@@ -91,7 +91,7 @@ namespace MyGame
         /// Вывод всех обьектов на игровой экран
         /// </summary>
         public static void Draw()
-        {           
+        {
             Buffer.Graphics.Clear(Color.Black);
             _planets?.Draw();
             Interface();
@@ -140,14 +140,14 @@ namespace MyGame
 
             foreach (Bullet b in _bullets) b.Update();
             foreach (Asteroid a in _asteroids) a.Update();
-           
+
             _heal?.Update();
             _planets?.Update();
 
             if (_ship.Energy <= 0) _ship?.Die();
             if (_ship.Collision(_heal)) BeHealed();
             if (_ship.flag == true) _ship.EnergyLow(0.05f);
- 
+
             for (int i = 0; i < _asteroids.Count; i++)
             {
 
@@ -157,7 +157,7 @@ namespace MyGame
                     delLog.Dmg(str);
                     _ship?.EnergyLow(rnd.Next(1, 10));
 
-                   SystemSounds.Asterisk.Play();
+                    SystemSounds.Asterisk.Play();
                     _asteroids.RemoveAt(i);
                     str = "0";
                     delLog.Del(str);
@@ -232,14 +232,15 @@ namespace MyGame
                 _ship.BostSpeed();
                 if (_ship.flag == true) delLog.Costum("Boost On\t Energy going down");
                 else delLog.Costum("Boost Off");
-               }
-                if (e.KeyCode == Keys.N) SaundPlayer();
+            }
+            if (e.KeyCode == Keys.N) SaundPlayer();
             if (_SndPlr != null & e.KeyCode == Keys.M) { _SndPlr.Stop(); delLog.Costum("Music Off"); }
 
             if (e.KeyCode == Keys.Escape)
             {
                 BestScore();
-                Application.Exit();
+
+                Application.ExitThread();
             }
         }
         /// <summary>
@@ -272,10 +273,13 @@ namespace MyGame
         /// </summary>
         static void BestScore()
         {
+            string bufferScore;
             using (scoreWriter)
             {
+                if (Convert.ToInt32(SplashScreen.drawString) < score) bufferScore = score.ToString();
+                else bufferScore = SplashScreen.drawString;
                 scoreWriter.AutoFlush = true;
-                scoreWriter.WriteLine("Name: User_1\tscore :{0}", score.ToString());
+                scoreWriter.Write(bufferScore);
             }
         }
         /// <summary>
@@ -324,7 +328,7 @@ namespace MyGame
         /// </summary>
         static void BeHealed()
         {
-          int  tmpValue = rnd.Next(5, 20);
+            int tmpValue = rnd.Next(5, 20);
             if (_ship?.Energy < 100)
             {
                 if (_ship?.Energy + tmpValue > 100)
@@ -344,7 +348,7 @@ namespace MyGame
 
             }
             _heal.Geneerate();
-           SystemSounds.Exclamation.Play();
+            SystemSounds.Exclamation.Play();
 
         }
         /// <summary>
