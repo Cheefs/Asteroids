@@ -43,7 +43,7 @@ namespace MyGame
 
         public static int Width { get; set; }
         public static int Height { get; set; }
-        public static StreamWriter scoreWriter = new StreamWriter("score.txt");
+       
         public static int score = 0;
         private static int AsteroidsCount { get; set; } = 0;
 
@@ -274,13 +274,17 @@ namespace MyGame
         static void BestScore()
         {
             string bufferScore;
-            using (scoreWriter)
+            if (Convert.ToInt32(SplashScreen.drawString) < score)
             {
-                if (Convert.ToInt32(SplashScreen.drawString) < score) bufferScore = score.ToString();
-                else bufferScore = SplashScreen.drawString;
-                scoreWriter.AutoFlush = true;
-                scoreWriter.Write(bufferScore);
+                using (StreamWriter scoreWriter = new StreamWriter("score.txt"))
+                {
+                    //if (Convert.ToInt32(SplashScreen.drawString) < score) bufferScore = score.ToString();
+                    // else bufferScore = SplashScreen.drawString;
+                    scoreWriter.AutoFlush = true;
+                    scoreWriter.Write(score.ToString());
+                }
             }
+          
         }
         /// <summary>
         /// Элемент интерфейса - Отображающий количество астероидов
